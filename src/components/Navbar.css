@@ -1,0 +1,13 @@
+nav {
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem;
+    box-shadow: 4px 4px 8px gray;
+}
+
+nav > svg {
+    height: 4rem;
+    width: auto;
+}
