@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Pokemones.css'
+import { Link } from "react-router-dom"
 
 function Pokemon({id, name, img}) {
     return (
@@ -43,7 +44,16 @@ function Pokemones() {
     return (
         <section className='pokemon-container'>
             {
-                pokemones.map(pokemon => <Pokemon {...pokemon}/>)
+                
+                pokemones.map((pokemon) => (
+                    <div>
+                    
+                    <Link to={`/poke/${pokemon.id}`}>
+                      <Pokemon {...pokemon}/>
+                      </Link>
+                    </div>
+                    
+                ))
             }
         </section>
     )
