@@ -1,11 +1,51 @@
 
 .menu ul {
-    display: none;
+    display: block;
     list-style: none;
     margin: 0;
     padding: 0;
   }
+
+
+  .menu li {
+    display: inline;
+    margin-left: 20px;
+  }
   
+  .menu a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu {
+      position: absolute;
+      background-color: #f2f2f2;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      text-align: center;
+      display: none;
+    }
+  
+    .menu li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .menu-active {
+      display: block;
+    }
+  
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+
+
+
   /* .menu li {
     margin-left: 20px;
   }

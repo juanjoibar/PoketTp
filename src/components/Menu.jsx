@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Menu.css'
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ const Menu = () => {
   };
 
   return (
-    <div>
+    <div className='menu'>
       <div className="menu-togglex" onClick={handleMenuToggle}>
         <span></span>
         <span></span>

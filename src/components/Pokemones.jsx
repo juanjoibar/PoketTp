@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './Pokemones.css'
 import { Link } from "react-router-dom"
 
+
 function Pokemon({id, name, img}) {
     return (
         <div className='pokemon-card'>
@@ -46,7 +47,7 @@ function Pokemones() {
             {
                 
                 pokemones.map((pokemon) => (
-                    <div>
+                    <div key={pokemon.id}>
                     
                     <Link to={`/poke/${pokemon.id}`}>
                       <Pokemon {...pokemon}/>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./PokeDetalle.css";
+import Footer from "../footer/Footer"
 import Navbar from "../Navbar";
 
 export const PokeDetalle = () => {
@@ -72,6 +73,7 @@ export const PokeDetalle = () => {
         </div>
       </div>
       </div>
+      <Footer/>
     </>
   );
 };
