@@ -1,51 +1,46 @@
-import { useEffect, useState } from 'react';
+import usePokemones from '../hooks/usePokemones'
 import './Pokemones.css'
+import Buscador from './Buscador'
+import { useState } from 'react'
 
-function Pokemon({id, name, img}) {
+function Pokemones() {
+    const { pokemones, masPokemones, searchPokemon } = usePokemones()
+    const [busqueda, setBusqueda] = useState('')
+
+    const buscarPokemon = async(e) => {
+        e.preventDefault()
+        if(!busqueda) return
+        const pokemon = await searchPokemon(busqueda)
+
+        console.log('mostrando pokemon');
+    }
+
     return (
-        <div className='pokemon-card'>
-            <img src={img} alt={name} className='pokemon-img' />
-            <p className='pokemon-title'>
-                <span>{id}</span>
-                <span>{name}</span>
-            </p>
-        </div>
+        <>  
+            <br/>
+            <Buscador busqueda={busqueda} setBusqueda={setBusqueda} buscarPokemon={buscarPokemon}/>
+            <br/>
+            <section className='pokemon-container'>
+                {
+                    pokemones.map(pokemon => <Pokemon {...pokemon} key={pokemon.id} />)
+                }
+                <button className='btn-buscar' onClick={masPokemones}>Mostrar mas Pokemones</button>
+            </section>
+        </>
     )
 }
 
-function Pokemones() {
-    const [pokemones, setPokemones] = useState([])
-
-    useEffect(() => {
-        const getPokemones = async () => {
-            //Obtenemos el listado de los pokemones
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
-            const listaPokemones = await response.json()
-            const { results } = listaPokemones
-
-            const newPokemones = results.map(async (pokemon) => {
-                const response = await fetch(pokemon.url)
-                const poke = await response.json()
-
-                return {
-                    id: poke.id,
-                    name: poke.name,
-                    img: poke.sprites.other.dream_world.front_default
-                }
-            })
-            setPokemones(await Promise.all(newPokemones));
-        }
-
-        getPokemones()
-    }, [])
-
-
+function Pokemon({ id, name, img }) {
     return (
-        <section className='pokemon-container'>
-            {
-                pokemones.map(pokemon => <Pokemon {...pokemon}/>)
-            }
-        </section>
+        <>
+            <div className='pokemon-card'>
+                <img src={img} alt={name} className='pokemon-img' />
+                <p className='pokemon-title'>
+                    <span>{id}</span>
+                    <span>{name}</span>
+                </p>
+            </div>
+        </>
     )
 }
 

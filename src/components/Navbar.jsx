@@ -2,6 +2,7 @@ import { Logo } from './Icons'
 import './Navbar.css'
 
 const Navbar = () => {
+
     return (
         <nav>
             <Logo/>
