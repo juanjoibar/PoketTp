@@ -5,7 +5,7 @@
     padding: 10px;
     /* max-width: 1200px; */
     /* margin-top: 80px; */
-    margin: 80px 0px auto;
+    margin: 100px 0px auto;
     
   }
   
@@ -36,3 +36,8 @@
     border-radius: 10px;
     width: 50%;
   }
+  .buscar{
+    display: inline;
+    clear: both;
+    padding: 20px;
+}

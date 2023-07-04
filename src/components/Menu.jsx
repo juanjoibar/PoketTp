@@ -18,7 +18,7 @@ const Menu = () => {
       </div>
       <ul>
         <li><Link to="/" onClick={handleMenuToggle}>Inicio</Link></li>
-        <li><Link to="/buscar" onClick={handleMenuToggle}>Buscar</Link></li>
+        {/* <li><Link to="/buscar" onClick={handleMenuToggle}>Buscar</Link></li> */}
         <li><Link to="/contacto" onClick={handleMenuToggle}>Contacto</Link></li>
       </ul>
     </div>
