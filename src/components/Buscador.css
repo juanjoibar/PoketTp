@@ -1,10 +1,10 @@
-/* .titulo {
+.titulo {
     font-size: 36px;
     font-weight: 400;
     color: #000;
     text-align: center;
     margin: 2rem 0 1rem 0;
-} */
+}
 .buscador{
    
     z-index: 0;
@@ -14,8 +14,10 @@
     width: 100%;
 }
 .container-buscar {
-    margin-top: 60px;
-     display: flex;
+    width: 1200px;
+    margin-top: 70px;
+    margin-inline: auto;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -33,6 +35,7 @@
 }
 
 .btn-buscar {
+    width: 200px;
     background-color: lightblue;
     color: #000;
     border-radius: 10px;
