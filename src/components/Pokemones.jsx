@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./Pokemones.css";
 import { Link, useNavigate } from "react-router-dom";
 import Buscador from "./Buscador";
@@ -18,11 +18,13 @@ function Pokemon({ id, name, img }) {
 
 function Pokemones() {
   
-
-  const [pokemones, setPokemones] = useState([]);
+  const { pokemones, masPokemones } = usePokemones()
+  //const [pokemones, setPokemones] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   const navigate = useNavigate()
+/*
   useEffect(() => {
+    
     const getPokemones = async () => {
       //Obtenemos el listado de los pokemones
       const response = await fetch(
@@ -46,7 +48,7 @@ function Pokemones() {
 
     getPokemones();
   }, []);
-
+*/
   const searchPokemon = async (busqueda) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${busqueda.toLowerCase()}`;
     const response = await fetch(url);
@@ -73,7 +75,7 @@ function Pokemones() {
     console.log(pokemon);
     
     console.log('estoy')
-    if(pokemon== 'error'){
+    if(pokemon === 'error'){
       navigate('/')
     }else{
 
@@ -98,6 +100,7 @@ function Pokemones() {
               </Link>
             </div>
           ))}
+          <button className='btn-buscar' onClick={masPokemones}>Mostrar mas Pokemones</button>
         </section>
       </div>
     </>
