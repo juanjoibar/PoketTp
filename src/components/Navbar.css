@@ -15,4 +15,5 @@ nav {
 nav > svg {
     height: 4rem;
     width: auto;
+    margin-right: 25px;
 }

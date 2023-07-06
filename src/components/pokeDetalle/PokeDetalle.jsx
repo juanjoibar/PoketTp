@@ -36,7 +36,7 @@ export const PokeDetalle = () => {
      <div className="personaje">
 
      
-      <h1 className="titulo"> Nombre de Poke: {poke.name}</h1>
+      <h1 className="titulo"><strong>{poke.name}</strong></h1>
       <div className="flip-card">
         <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -50,7 +50,8 @@ export const PokeDetalle = () => {
           </div>
         
         <div className="flip-card-back">
-          <h4 className="titulo"> Nombre de Poke: {poke.name}</h4>
+          {/* <h4 className="titulo"> Nombre de Poke: {poke.name}</h4> */}
+          <br /><br />
           <p className="peso">
             <strong>Peso: </strong>
             {poke.weight}
