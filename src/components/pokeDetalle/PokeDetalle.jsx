@@ -17,6 +17,7 @@ export const PokeDetalle = () => {
       .then((response) => response.json())
       .then((data) => {
         setPoke(data);
+        console.log(data);
         setCargado(false);
         console.log("sale data");
       });
@@ -68,7 +69,9 @@ export const PokeDetalle = () => {
           <p className="genero">
             <strong>Habilidades:</strong>
 
-            {poke.abilities.map((ability) => ability.name).join("/")}
+            {poke.abilities.map((ability) => ability.ability.name).join("/")
+              
+            }
           </p>
         </div>
         </div>

@@ -54,3 +54,77 @@
 .btn-buscar:hover {
     transform: scale(0.95);
 }
+
+@media screen and (max-width: 480px) {
+
+    .titulo {
+        font-size: 36px;
+        font-weight: 400;
+        color: #000;
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+    }
+    .buscador{
+       
+        z-index: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .container-buscar {
+        width: 380px;
+        margin-top: 70px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 0;
+    }
+    
+    .input-buscar {
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        padding: 12px;
+        flex: .4;
+        font-size: 16px;
+        box-shadow: 4px 4px 8px gray;
+    }
+    
+    .btn-buscar {
+        width: 200px;
+        background-color: lightblue;
+        color: #000;
+        border-radius: 10px;
+        padding: 12px;
+        border: none;
+        box-shadow: 4px 4px 8px gray;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        gap: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.4s;
+    }
+    
+    .btn-buscar:hover {
+        transform: scale(0.95);
+    }
+
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .container-buscar {
+        width: 700px;
+        margin-top: 70px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 0;
+    }
+
+}

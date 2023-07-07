@@ -43,3 +43,66 @@
     clear: both;
     padding: 20px;
 }
+@media screen and (max-width: 480px) {
+
+  .pokemon-container {
+    z-index: -3;
+      display: grid;
+      grid-template-columns: repeat(1,  1fr);
+      gap: 15px;
+      padding: 15px; 
+  
+     
+      margin: 130px 10px 65px 20px;
+      
+    }
+
+    .pokemon-card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+      background-color: lightblue;
+      padding: 5px 0;
+    }
+    
+    .pokemon-img {
+      width: 100px;
+      height: 100px;
+      margin: 5px 0;
+    }
+    
+    .pokemon-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #3e76e7;
+      color: #eee;
+      font-weight: 600;
+      text-transform: capitalize;
+      padding: 4px 8px;
+      border-radius: 10px;
+      width: 50%;
+    }
+    .buscar{
+      display: inline;
+      clear: both;
+      padding: 20px;
+  }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+
+  .pokemon-container {
+    z-index: -3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 15px;
+  
+      /* margin-top: 80px; */
+      margin: 130px 10px 65px 20px;
+      
+    }
+}
